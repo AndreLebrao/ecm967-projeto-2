@@ -11,7 +11,7 @@ const Query = {
   historico(parent, args, ctx, info) {
     const msgs = [...ctx.db.mensagem];
     msgs.sort((a, b) => {
-      return a.datahora - b.datahora;
+      return b.datahora - a.datahora;
     });
 
     return msgs;
