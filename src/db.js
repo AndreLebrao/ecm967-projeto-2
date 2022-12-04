@@ -12,6 +12,12 @@ let mensagem = [
     categoria: "geral",
     datahora: 1670170441,
   },
+  {
+    id: 2,
+    texto: "mensagem do passado",
+    categoria: "esportes",
+    datahora: 1670170440,
+  },
 ];
 let logs = [
   {
