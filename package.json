@@ -1,0 +1,30 @@
+{
+  "name": "ecm967-projeto-2",
+  "version": "1.0.0",
+  "description": "Instituto Mauá de Tecnologia\r ECM967 - Tópicos Avançados em Back End\r Professor Rodrigo Bossini\r Especificação do projeto - Parte 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js --ext js,graphql  --exec babel-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreLebrao/ecm967-projeto-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreLebrao/ecm967-projeto-2/issues"
+  },
+  "homepage": "https://github.com/AndreLebrao/ecm967-projeto-2#readme",
+  "dependencies": {
+    "@graphql-yoga/node": "^2.13.13",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "graphql": "^16.6.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
