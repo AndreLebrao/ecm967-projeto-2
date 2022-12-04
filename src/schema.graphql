@@ -1,0 +1,27 @@
+type Usuario {
+  id: ID!
+  login: String!
+  senha: String!
+  mensagens: [Mensagem!]
+}
+
+type Mensagem {
+  id: ID!
+  texto: String!
+  categoria: String!
+  datahora: Int!
+}
+
+type Log {
+  id: ID!
+  operacao: String!
+  datahora: Int!
+}
+
+type Query {
+  # totaisPorCategoria: data:{"cinema":2,"esportes":5,"geral":0}
+  historico: [Mensagem!]!
+  logs: [Log!]!
+  usuario: [Usuario!]!
+  mensagem: [Mensagem!]!
+}
