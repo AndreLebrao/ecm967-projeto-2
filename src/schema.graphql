@@ -30,7 +30,19 @@ type Mutation {
   inserirMensagem(msg: InserirMensagemInput): Mensagem!
 }
 
+type Subscription {
+  mensagem: Mensagem!
+  cinema: Mensagem!
+  esportes: Mensagem!
+  geral: MensagemPayload!
+}
+
 input InserirMensagemInput {
   texto: String!
   categoria: String!
+}
+
+type MensagemPayload {
+  texto: String!
+  datahora: Float!
 }

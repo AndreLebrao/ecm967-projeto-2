@@ -17,6 +17,12 @@ const Mutation = {
       datahora: parseFloat(Date.now()),
     };
     ctx.db.mensagem.push(mensagem);
+    const payload = {};
+    payload[categoria] = {
+      texto: mensagem.texto,
+      datahora: mensagem.datahora,
+    };
+    ctx.pubSub.publish(categoria, payload);
     return mensagem;
   },
 };
