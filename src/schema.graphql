@@ -21,7 +21,7 @@ type Log {
 type Query {
   # totaisPorCategoria: data:{"cinema":2,"esportes":5,"geral":0}
   historico: [Mensagem!]!
-  logs: [Log!]!
+  logs(login: String!, senha: String!): [Log!]!
   usuario: [Usuario!]!
   mensagem: [Mensagem!]!
 }
@@ -31,10 +31,10 @@ type Mutation {
 }
 
 type Subscription {
-  mensagem: Mensagem!
-  cinema: Mensagem!
-  esportes: Mensagem!
+  cinema: MensagemPayload!
+  esportes: MensagemPayload!
   geral: MensagemPayload!
+  logs(login: String!, senha: String!): [Log!]!
 }
 
 input InserirMensagemInput {
@@ -45,4 +45,10 @@ input InserirMensagemInput {
 type MensagemPayload {
   texto: String!
   datahora: Float!
+}
+
+type TotaisPorCategoriaPayload {
+  cinema: Int!
+  esportes: Int!
+  geral: Int!
 }

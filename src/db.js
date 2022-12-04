@@ -1,7 +1,12 @@
 let usuario = [
   {
     id: 1,
-    login: "andre",
+    login: "admin",
+    senha: "admin",
+  },
+  {
+    id: 2,
+    login: "rodrigo",
     senha: "qwe123",
   },
 ];

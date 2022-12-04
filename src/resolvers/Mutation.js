@@ -1,4 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
+import addToLog from "../logging";
+const logType = "Mutation";
 
 const Mutation = {
   inserirMensagem(parent, args, ctx, info) {
@@ -23,6 +25,7 @@ const Mutation = {
       datahora: mensagem.datahora,
     };
     ctx.pubSub.publish(categoria, payload);
+    addToLog(ctx, logType);
     return mensagem;
   },
 };
