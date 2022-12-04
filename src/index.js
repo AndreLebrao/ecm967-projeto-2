@@ -1,11 +1,13 @@
 import { createPubSub, createServer } from "@graphql-yoga/node";
 import * as fs from "fs";
 import db from "./db";
+import Mutation from "./resolvers/Mutation";
 import Query from "./resolvers/Query";
 
 const pubSub = createPubSub();
 const resolvers = {
   Query,
+  Mutation,
 };
 const server = createServer({
   schema: {

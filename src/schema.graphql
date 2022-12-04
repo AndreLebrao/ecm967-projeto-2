@@ -9,13 +9,13 @@ type Mensagem {
   id: ID!
   texto: String!
   categoria: String!
-  datahora: Int!
+  datahora: Float!
 }
 
 type Log {
   id: ID!
   operacao: String!
-  datahora: Int!
+  datahora: Float!
 }
 
 type Query {
@@ -24,4 +24,13 @@ type Query {
   logs: [Log!]!
   usuario: [Usuario!]!
   mensagem: [Mensagem!]!
+}
+
+type Mutation {
+  inserirMensagem(msg: InserirMensagemInput): Mensagem!
+}
+
+input InserirMensagemInput {
+  texto: String!
+  categoria: String!
 }

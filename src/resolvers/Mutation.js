@@ -1,0 +1,23 @@
+import { v4 as uuidv4 } from "uuid";
+
+const Mutation = {
+  inserirMensagem(parent, args, ctx, info) {
+    const texto = args.msg.texto;
+    const categoria = args.msg.categoria;
+    const categoriasValidas = ["cinema", "esportes", "geral"];
+    if (texto.length > 500)
+      throw new Error("Mensagem precisa ter até 500 caracteres");
+
+    if (!categoriasValidas.includes(categoria))
+      throw new Error("Categoria precisa ser 'cinema' | 'esportes' | 'geral' ");
+    const mensagem = {
+      id: uuidv4(),
+      texto: texto,
+      categoria: categoria,
+      datahora: parseFloat(Date.now()),
+    };
+    ctx.db.mensagem.push(mensagem);
+    return mensagem;
+  },
+};
+export default Mutation;
