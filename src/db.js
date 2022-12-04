@@ -37,8 +37,15 @@ let logs = [
   },
 ];
 
+let categoria = {
+  cinema: 0,
+  esportes: 0,
+  geral: 0,
+};
+
 export default {
   usuario,
   mensagem,
   logs,
+  categoria
 };

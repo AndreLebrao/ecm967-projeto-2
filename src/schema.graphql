@@ -19,7 +19,7 @@ type Log {
 }
 
 type Query {
-  # totaisPorCategoria: data:{"cinema":2,"esportes":5,"geral":0}
+  totaisPorCategoria: TotaisPorCategoriaPayload!
   historico: [Mensagem!]!
   logs(login: String!, senha: String!): [Log!]!
   usuario: [Usuario!]!

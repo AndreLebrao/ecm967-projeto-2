@@ -29,6 +29,9 @@ const Query = {
     addToLog(ctx, logType);
     return msgs;
   },
+  totaisPorCategoria(parent, args, ctx, info) {
+    return ctx.db.categoria;
+  },
 };
 
 export default Query;
